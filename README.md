@@ -50,6 +50,11 @@ This chapter covers the basic load & store instructions in addition to real-time
 
 -> Click [HERE](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Embedded-Assembler.pdf) to read the FREE pdf book.
 
+## Chapter 9: Constants & Literal Values
+This chapter covers the basic constants & literal value examples within the STM32F401CCU6 architecture.
+
+-> Click [HERE](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Embedded-Assembler.pdf) to read the FREE pdf book.
+
 IN DEVELOPMENT...  MORE TO COME SOON!!!
 
 ## License
