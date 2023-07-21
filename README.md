@@ -5,7 +5,7 @@
 <br>
 
 # Embedded Assembler
-A FREE comprehensive step-by-step embedded Assembler tutorial covering the basics including coding your own vector table and linker script from scratch, I/O programming all the way to up to developing and hacking IoT devices.
+A FREE comprehensive step-by-step embedded Assembler tutorial covering the basics including coding your own vector table and linker script from scratch, I/O programming all the way to up to developing and hacking IoT.
 
 ## FREE Book
 [Download](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Embedded-Assembler.pdf)
