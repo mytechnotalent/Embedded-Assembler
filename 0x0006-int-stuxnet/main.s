@@ -11,11 +11,11 @@
  *
  * ASSEMBLE AND LINK w/ SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
- * 2. arm-none-eabi-ld main.o -o main.elf -T stm32f401ccux.ld
+ * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
  * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.elf 0x08000000 verify reset exit"
  * ASSEMBLE AND LINK w/o SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
- * 2. arm-none-eabi-ld main.o -o main.elf -T stm32f401ccux.ld
+ * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
  * 3. arm-none-eabi-objcopy -O binary --strip-all main.elf main.bin
  * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.bin 0x08000000 verify reset exit"
  * DEBUG w/ SYMBOLS:
@@ -718,5 +718,5 @@ NVIC_EnableIRQ_EXTI15_10:
   LDR    R0, =0xE000E104                                   // NVIC_ISER1, p 683 M7 Arch ref manual, ISER1 interrupts 32-63
   LDR    R1, [R0]                                          // load value inside NVIC_ISER1 register
   ORR    R1, #(1<<8)                                       // 0x100=EXTI15-10 (p 204 Ref Manual), p 210 M4 Programming manual, ISER1 8 is 40
-  STR    R1, [R0]				                                   // store value into R0
+  STR    R1, [R0]                                          // store value into R0
   BX     LR                                                // return to caller
