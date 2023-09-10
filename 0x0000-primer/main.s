@@ -12,7 +12,7 @@
  * ASSEMBLE AND LINK w/ SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
  * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
- * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.elf 0x08000000 verify reset exit"
+ * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.elf verify reset exit"
  * ASSEMBLE AND LINK w/o SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
  * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
