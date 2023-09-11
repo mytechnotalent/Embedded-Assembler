@@ -8,7 +8,7 @@
 A FREE comprehensive step-by-step embedded Assembler tutorial covering the basics including coding your own vector table and linker script from scratch, I/O programming all the way to up to developing and hacking IoT.
 
 ## FREE ARM Cortex Assembler Primer
-[Download](https://https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Assembler-Primer.pdf)
+[Download](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Assembler-Primer.pdf)
 
 ## FREE Book
 [Download](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Embedded-Assembler.pdf)
