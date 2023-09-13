@@ -471,6 +471,7 @@ USART1_Enable:
   ORR   R1, #(1<<3)                                        // set the TE bit
   ORR   R1, #(1<<2)                                        // set the RE bit
   STR   R1, [R0]                                           // store value into USART1_CR1 register
+  BX    LR                                                 // return to caller
 
 /**
  * @brief   Sends a single character over USART1.
@@ -813,4 +814,4 @@ Loops:
 // on UART and typing a char in the UART displays the char.  These actions are independent of the 
 // main loop and will interrupt the main loop.
 Interrupts:
-  BX     LR
+  BX     LR                                                // return to caller
