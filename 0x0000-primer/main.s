@@ -222,7 +222,7 @@ EXTI15_10_IRQHandler:
   BL    EXTI_Callback                                      // call function
 .PR13_0:
   POP   {LR}                                               // pop return address from stack                                         
-  BX    LR                                                 // return from the function
+  BX    LR                                                 // return to caller
 
 /**
  * @brief   USART1 interrupt handler.
@@ -245,7 +245,7 @@ USART1_IRQHandler:
   TST   R1, #(1<<5)                                        // read the RXNE register
   BL    USART1_Callback                                    // call function
   POP   {LR}                                               // pop return address from stack    
-  BX    LR                                                 // return from the function
+  BX    LR                                                 // return to caller
 
 /**
  * @brief   Entry point for initialization and setup of specific functions.
