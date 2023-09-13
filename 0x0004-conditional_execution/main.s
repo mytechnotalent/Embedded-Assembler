@@ -175,9 +175,9 @@ isr_vector:
 .type Reset_Handler, %function
 .global Reset_Handler
 Reset_Handler:
-  LDR  R0, =_estack
-  MOV  SP, R0
-  BL   __start
+  LDR   R0, =_estack                                       // load address at end of the stack into R0
+  MOV   SP, R0                                             // move address at end of stack into SP
+  BL    __start                                            // call function
 
 /**
  * @brief  This code is called when the processor receives and unexpected interrupt.
@@ -192,8 +192,8 @@ Reset_Handler:
 .type Default_Handler, %function
 .global Default_Handler
 Default_Handler:
-  BKPT
-  B.N  Default_Handler
+  BKPT                                                     // set processor into debug state
+  B.N   Default_Handler                                    // call function, force thumb state
 
 /**
  * @brief  Entry point for initialization and setup of specific functions.
@@ -213,7 +213,6 @@ __start:
 
 Equal:
   NOP                                                      // no operation instruction
-
   MOV  R0, #0x43                                           // move 0x43 into R0
   MOV  R1, #0x42                                           // move 0x42 into R1
   CMP  R0, R1                                              // compare R0 - R1
@@ -221,7 +220,6 @@ Equal:
 
 Greater:
   NOP                                                      // no operation instruction
-
   MOV  R0, #0x42                                           // move 0x42 into R0
   MOV  R1, #0x43                                           // move 0x43 into R1
   CMP  R0, R1                                              // compare R0 - R1
@@ -229,7 +227,6 @@ Greater:
 
 Less:
   NOP                                                      // no operation instruction
-
   LDR  R0, =0x40023830                                     // load address of RCC_AHB1ENR register
   LDR  R1, [R0]                                            // load value inside RCC_AHB1ENR register
   ORR  R1, #(1<<0)                                         // set the GPIOAEN bit
@@ -238,7 +235,6 @@ Less:
 
 Bit_Set:
   NOP                                                      // no operation instruction
-
   LDR  R0, =0x40023830                                     // load address of RCC_AHB1ENR register
   LDR  R1, [R0]                                            // load value inside RCC_AHB1ENR register
   BIC  R1, #(1<<0)                                         // clear the GPIOAEN bit
