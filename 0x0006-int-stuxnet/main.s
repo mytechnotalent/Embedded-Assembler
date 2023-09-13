@@ -222,7 +222,7 @@ EXTI15_10_IRQHandler:
   BL    EXTI_Callback                                      // call function
 .PR13_0:
   POP   {LR}                                               // pop return address from stack                                         
-  BX    LR                                                 // return from the function
+  BX    LR                                                 // return to caller
 
 /**
  * @brief   Entry point for initialization and setup of specific functions.
@@ -433,6 +433,7 @@ USART1_Enable:
   ORR   R1, #(1<<3)                                        // set the TE bit
   ORR   R1, #(1<<2)                                        // set the RE bit
   STR   R1, [R0]                                           // store value into USART1_CR1 register
+  BX    LR                                                 // return to caller
 
 /**
  * @brief   Sends a single character over USART1.
