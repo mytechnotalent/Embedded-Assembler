@@ -11,21 +11,21 @@
  *
  * ASSEMBLE AND LINK w/ SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
- * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
+ * 2. arm-none-eabi-ld main.o -o main.elf -T stm32f401ccux.ld
  * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.elf verify reset exit"
  * ASSEMBLE AND LINK w/o SYMBOLS:
  * 1. arm-none-eabi-as -g main.s -o main.o
- * 2. arm-none-eabi-ld main.o -o main.elf -T st_nucleo_f4.ld
+ * 2. arm-none-eabi-ld main.o -o main.elf -T stm32f401ccux.ld
  * 3. arm-none-eabi-objcopy -O binary --strip-all main.elf main.bin
  * 3. openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c "program main.bin 0x08000000 verify reset exit"
  * DEBUG w/ SYMBOLS:
- * 1. openocd -f board/st_nucleo_f4.cfg
+ * 1. openocd -f board/stm32f4x.cfg
  * 2. arm-none-eabi-gdb main.elf
  * 3. target remote :3333
  * 4. monitor reset halt
  * 5. l
  * DEBUG w/o SYMBOLS:
- * 1. openocd -f board/st_nucleo_f4.cfg
+ * 1. openocd -f board/stm32f4x.cfg
  * 2. arm-none-eabi-gdb main.bin
  * 3. target remote :3333
  * 4. monitor reset halt
