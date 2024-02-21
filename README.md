@@ -68,5 +68,7 @@ This chapter covers functions, interrupts, UART and a simple STUXNET simulation 
 
 -> Click [HERE](https://github.com/mytechnotalent/Embedded-Assembler/blob/main/Embedded-Assembler.pdf) to read the FREE pdf book.
 
+<br>
+
 ## License
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
